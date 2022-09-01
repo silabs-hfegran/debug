@@ -1,0 +1,119 @@
+SECTIONS
+{
+   .region_1 (NOLOAD):
+   {
+      KEEP(*(.region_1));
+   } > region_1
+   .region_2 (NOLOAD):
+   {
+      KEEP(*(.region_2));
+   } > region_2
+   .region_3 (ORIGIN(region_3)):
+   {
+      KEEP(*(.region_3));
+   } > region_3
+   .region_4 (ORIGIN(region_4)):
+   {
+      KEEP(*(.region_4));
+   } > region_4
+   .region_5 (ORIGIN(region_5)):
+   {
+      KEEP(*(.region_5));
+   } > region_5
+   .region_6 (ORIGIN(region_6)):
+   {
+      KEEP(*(.region_6));
+   } > region_6
+   .region_7 (ORIGIN(region_7)):
+   {
+      KEEP(*(.region_7));
+   } > region_7
+   .region_8 (ORIGIN(region_8)):
+   {
+      KEEP(*(.region_8));
+   } > region_8
+   .region_9 (ORIGIN(region_9)):
+   {
+      KEEP(*(.region_9));
+   } > region_9
+   .region_10 (NOLOAD):
+   {
+      KEEP(*(.region_10));
+   } > region_10
+   .region_11 (NOLOAD):
+   {
+      KEEP(*(.region_11));
+   } > region_11
+   .region_12 (NOLOAD):
+   {
+      KEEP(*(.region_12));
+   } > region_12
+   .region_13 (NOLOAD):
+   {
+      KEEP(*(.region_13));
+   } > region_13
+   .region_14 (ORIGIN(region_14)):
+   {
+      KEEP(*(.region_14));
+   } > region_14
+   .region_15 (ORIGIN(region_15)):
+   {
+      KEEP(*(.region_15));
+   } > region_15
+   .region_16 (ORIGIN(region_16)):
+   {
+      KEEP(*(.region_16));
+   } > region_16
+   .region_17 (ORIGIN(region_17)):
+   {
+      KEEP(*(.region_17));
+   } > region_17
+   .region_18 (NOLOAD):
+   {
+      KEEP(*(.region_18));
+   } > region_18
+   .region_19 (NOLOAD):
+   {
+      KEEP(*(.region_19));
+   } > region_19
+   .region_20 (ORIGIN(region_20)):
+   {
+      KEEP(*(.region_20));
+   } > region_20
+   .region_21 (ORIGIN(region_21)):
+   {
+      KEEP(*(.region_21));
+   } > region_21
+   .region_22 (ORIGIN(region_22)):
+   {
+      KEEP(*(.region_22));
+   } > region_22
+   .region_23 (ORIGIN(region_23)):
+   {
+      KEEP(*(.region_23));
+   } > region_23
+   .region_24 (NOLOAD):
+   {
+      KEEP(*(.region_24));
+   } > region_24
+   .region_25 (NOLOAD):
+   {
+      KEEP(*(.region_25));
+   } > region_25
+   .region_26 (ORIGIN(region_26)):
+   {
+      KEEP(*(.region_26));
+   } > region_26
+   .region_27 (ORIGIN(region_27)):
+   {
+      KEEP(*(.region_27));
+   } > region_27
+   .region_28 (ORIGIN(region_28)):
+   {
+      KEEP(*(.region_28));
+   } > region_28
+   .region_29 (ORIGIN(region_29)):
+   {
+      KEEP(*(.region_29));
+   } > region_29
+}

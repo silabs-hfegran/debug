@@ -1,0 +1,26 @@
+SECTIONS
+{
+   /* CORE-V: interrupt vectors */
+   PROVIDE(__vector_start = 0x48000000);
+   mtvec_handler = DEFINED(vectored_mode) ? ABSOLUTE(0x48000000) : mtvec_handler;
+   .mtvec_bootstrap (__vector_start) :
+   {
+      KEEP(*(.mtvec_bootstrap));
+   }
+
+   .mtvec_handler (__vector_start) :
+   {
+      *(.mtvec*);
+      KEEP(*(.mtvec_handler));
+   }
+
+   /* CORE-V: we want a fixed entry point */
+   PROVIDE(__boot_address = 0x48000080);
+
+   /* NMI interrupt handler fixed entry point */
+   .nmi_bootstrap ABSOLUTE(0x4800003c)  :
+   {
+      KEEP(*(.nmi));
+   } > region_0
+
+}
