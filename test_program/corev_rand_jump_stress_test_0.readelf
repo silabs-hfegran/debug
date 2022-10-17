@@ -1,0 +1,317 @@
+ELF Header:
+  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF32
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           RISC-V
+  Version:                           0x1
+  Entry point address:               0x80
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          290308 (bytes into file)
+  Flags:                             0x1, RVC, soft-float ABI
+  Size of this header:               52 (bytes)
+  Size of program headers:           32 (bytes)
+  Number of program headers:         5
+  Size of section headers:           40 (bytes)
+  Number of section headers:         26
+  Section header string table index: 25
+
+Section Headers:
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] .debugger         PROGBITS        1a110800 033800 000004 00  AX  0   0  1
+  [ 2] .debugger_ex[...] PROGBITS        1a111000 034000 000002 00  AX  0   0  1
+  [ 3] .debugger_stack   NOBITS          1a111010 034002 000080 00  WA  0   0 16
+  [ 4] .mtvec_handler    PROGBITS        00000000 001000 000080 00  AX  0   0  1
+  [ 5] .init             PROGBITS        00000080 001080 000004 00  AX  0   0  1
+  [ 6] .text             PROGBITS        00000100 001100 00967c 00  AX  0   0 256
+  [ 7] .data             PROGBITS        00009780 00a780 000088 00  WA  0   0 64
+  [ 8] .region_0         PROGBITS        00009808 00a808 001000 00  WA  0   0  1
+  [ 9] .region_1         PROGBITS        0000a808 00b808 010000 00  WA  0   0  1
+  [10] .user_stack       PROGBITS        0001a808 01b808 013880 00  WA  0   0  4
+  [11] .kernel_stack     PROGBITS        0002e088 02f088 003e80 00  WA  0   0  4
+  [12] .heap             NOBITS          00031f10 032f08 3ce0f0 00  WA  0   0 16
+  [13] .stack            NOBITS          00031f10 032f10 3ce0f0 00  WA  0   0 16
+  [14] text              PROGBITS        00000000 034002 000002 00      0   0  1
+  [15] .riscv.attributes RISCV_ATTRIBUTE 00000000 034004 00006a 00      0   0  1
+  [16] .debug_aranges    PROGBITS        00000000 034070 000040 00      0   0  8
+  [17] .debug_info       PROGBITS        00000000 0340b0 000023 00      0   0  1
+  [18] .debug_abbrev     PROGBITS        00000000 0340d3 000012 00      0   0  1
+  [19] .debug_line       PROGBITS        00000000 0340e5 0112d5 00      0   0  1
+  [20] .debug_str        PROGBITS        00000000 0453ba 0000b7 01  MS  0   0  1
+  [21] .debug_line_str   PROGBITS        00000000 045471 0000a8 01  MS  0   0  1
+  [22] .debug_rnglists   PROGBITS        00000000 045519 00002e 00      0   0  1
+  [23] .symtab           SYMTAB          00000000 045548 000e50 10     24 209  4
+  [24] .strtab           STRTAB          00000000 046398 000953 00      0   0  1
+  [25] .shstrtab         STRTAB          00000000 046ceb 000117 00      0   0  1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  D (mbind), p (processor specific)
+
+There are no section groups in this file.
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  RISCV_ATTRIBUT 0x034004 0x00000000 0x00000000 0x0006a 0x00000 R   0x1
+  LOAD           0x001000 0x00000000 0x00000000 0x00080 0x00080 R E 0x1000
+  LOAD           0x001080 0x00000080 0x00000080 0x31e88 0x3fff80 RWE 0x1000
+  LOAD           0x000f10 0x00031f10 0x00031f10 0x00000 0x3ce0f0 RW  0x1000
+  LOAD           0x033800 0x1a110800 0x1a110800 0x00802 0x00890 RWE 0x1000
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     .riscv.attributes 
+   01     .mtvec_handler 
+   02     .init .text .data .region_0 .region_1 .user_stack .kernel_stack .heap .stack 
+   03     .heap .stack 
+   04     .debugger .debugger_exception .debugger_stack 
+
+There is no dynamic section in this file.
+
+There are no relocations in this file.
+
+The decoding of unwind sections for machine type RISC-V is not currently supported.
+
+Symbol table '.symtab' contains 229 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 1a110800     0 SECTION LOCAL  DEFAULT    1 .debugger
+     2: 1a111000     0 SECTION LOCAL  DEFAULT    2 .debugger_exception
+     3: 1a111010     0 SECTION LOCAL  DEFAULT    3 .debugger_stack
+     4: 00000000     0 SECTION LOCAL  DEFAULT    4 .mtvec_handler
+     5: 00000080     0 SECTION LOCAL  DEFAULT    5 .init
+     6: 00000100     0 SECTION LOCAL  DEFAULT    6 .text
+     7: 00009780     0 SECTION LOCAL  DEFAULT    7 .data
+     8: 00009808     0 SECTION LOCAL  DEFAULT    8 .region_0
+     9: 0000a808     0 SECTION LOCAL  DEFAULT    9 .region_1
+    10: 0001a808     0 SECTION LOCAL  DEFAULT   10 .user_stack
+    11: 0002e088     0 SECTION LOCAL  DEFAULT   11 .kernel_stack
+    12: 00031f10     0 SECTION LOCAL  DEFAULT   12 .heap
+    13: 00031f10     0 SECTION LOCAL  DEFAULT   13 .stack
+    14: 00000000     0 SECTION LOCAL  DEFAULT   14 text
+    15: 00000000     0 SECTION LOCAL  DEFAULT   15 .riscv.attributes
+    16: 00000000     0 SECTION LOCAL  DEFAULT   16 .debug_aranges
+    17: 00000000     0 SECTION LOCAL  DEFAULT   17 .debug_info
+    18: 00000000     0 SECTION LOCAL  DEFAULT   18 .debug_abbrev
+    19: 00000000     0 SECTION LOCAL  DEFAULT   19 .debug_line
+    20: 00000000     0 SECTION LOCAL  DEFAULT   20 .debug_str
+    21: 00000000     0 SECTION LOCAL  DEFAULT   21 .debug_line_str
+    22: 00000000     0 SECTION LOCAL  DEFAULT   22 .debug_rnglists
+    23: 00000000     0 FILE    LOCAL  DEFAULT  ABS cc2k7cr1.o
+    24: 00800000     0 NOTYPE  LOCAL  DEFAULT  ABS print_port
+    25: 008000c0     0 NOTYPE  LOCAL  DEFAULT  ABS test_ret_val
+    26: 00000080     0 NOTYPE  LOCAL  DEFAULT    5 $x
+    27: 00000100     0 NOTYPE  LOCAL  DEFAULT    6 h0_start
+    28: 00000100     0 NOTYPE  LOCAL  DEFAULT    6 $x
+    29: 0000010c     0 NOTYPE  LOCAL  DEFAULT    6 kernel_sp
+    30: 00031f04     0 NOTYPE  LOCAL  DEFAULT   11 kernel_stack_end
+    31: 00000114     0 NOTYPE  LOCAL  DEFAULT    6 trap_vec_init
+    32: 00000120     0 NOTYPE  LOCAL  DEFAULT    6 mepc_setup
+    33: 00000142     0 NOTYPE  LOCAL  DEFAULT    6 init
+    34: 0000012c     0 NOTYPE  LOCAL  DEFAULT    6 custom_csr_setup
+    35: 0000012e     0 NOTYPE  LOCAL  DEFAULT    6 init_machine_mode
+    36: 00024444     0 NOTYPE  LOCAL  DEFAULT   10 user_stack_end
+    37: 000001f0     0 NOTYPE  LOCAL  DEFAULT    6 main
+    38: 00006a8c     0 NOTYPE  LOCAL  DEFAULT    6 sub_2
+    39: 0000021a     0 NOTYPE  LOCAL  DEFAULT    6 main_j2
+    40: 0000142c     0 NOTYPE  LOCAL  DEFAULT    6 sub_3
+    41: 0000024c     0 NOTYPE  LOCAL  DEFAULT    6 main_j3
+    42: 00000250     0 NOTYPE  LOCAL  DEFAULT    6 main_1
+    43: 00001cb6     0 NOTYPE  LOCAL  DEFAULT    6 sub_1
+    44: 000003a0     0 NOTYPE  LOCAL  DEFAULT    6 main_j1
+    45: 000003c0     0 NOTYPE  LOCAL  DEFAULT    6 test_done
+    46: 0000043c     0 NOTYPE  LOCAL  DEFAULT    6 sub_4
+    47: 0000045c     0 NOTYPE  LOCAL  DEFAULT    6 sub_4_22
+    48: 00000524     0 NOTYPE  LOCAL  DEFAULT    6 sub_4_13
+    49: 00000564     0 NOTYPE  LOCAL  DEFAULT    6 sub_4_18
+    50: 00000586     0 NOTYPE  LOCAL  DEFAULT    6 sub_4_16
+    51: 00000702     0 NOTYPE  LOCAL  DEFAULT    6 sub_4_23
+    52: 000007fa     0 NOTYPE  LOCAL  DEFAULT    6 sub_4_21
+    53: 00000836     0 NOTYPE  LOCAL  DEFAULT    6 sub_4_14
+    54: 000008ee     0 NOTYPE  LOCAL  DEFAULT    6 sub_4_15
+    55: 00000918     0 NOTYPE  LOCAL  DEFAULT    6 sub_4_19
+    56: 000009d2     0 NOTYPE  LOCAL  DEFAULT    6 sub_4_20
+    57: 00000b28     0 NOTYPE  LOCAL  DEFAULT    6 sub_4_17
+    58: 00000c66     0 NOTYPE  LOCAL  DEFAULT    6 sub_4_12
+    59: 00001580     0 NOTYPE  LOCAL  DEFAULT    6 sub_3_6
+    60: 000015a4     0 NOTYPE  LOCAL  DEFAULT    6 sub_3_11
+    61: 000015d0     0 NOTYPE  LOCAL  DEFAULT    6 sub_3_8
+    62: 00001690     0 NOTYPE  LOCAL  DEFAULT    6 sub_3_10
+    63: 000016d2     0 NOTYPE  LOCAL  DEFAULT    6 sub_3_7
+    64: 00001912     0 NOTYPE  LOCAL  DEFAULT    6 sub_3_9
+    65: 00001d1c     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_46
+    66: 00001d44     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_36
+    67: 00001d86     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_27
+    68: 00001e5e     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_31
+    69: 00001e9c     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_35
+    70: 00001ee6     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_39
+    71: 00001f12     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_38
+    72: 00001f4c     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_33
+    73: 00001fd6     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_26
+    74: 000020ac     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_37
+    75: 00002208     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_30
+    76: 000022a0     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_40
+    77: 000022e6     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_41
+    78: 00002316     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_29
+    79: 0000237c     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_32
+    80: 000023b2     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_34
+    81: 000023ee     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_43
+    82: 0000246c     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_47
+    83: 0000252a     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_25
+    84: 000026b6     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_24
+    85: 00002760     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_28
+    86: 00002790     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_45
+    87: 00002d2c     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_44
+    88: 0000338c     0 NOTYPE  LOCAL  DEFAULT    6 sub_1_42
+    89: 00003b2a     0 NOTYPE  LOCAL  DEFAULT    6 sub_5
+    90: 00003b34     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_stack_p
+    91: 00003cce     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_67
+    92: 00003d72     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_37
+    93: 00003e38     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_65
+    94: 00003f4a     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_70
+    95: 00004042     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_40
+    96: 00004092     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_45
+    97: 000040e0     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_55
+    98: 00004138     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_63
+    99: 0000416e     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_60
+   100: 00004430     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_48
+   101: 00004488     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_71
+   102: 000044a8     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_44
+   103: 000044da     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_59
+   104: 000045be     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_41
+   105: 000045fa     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_66
+   106: 00004620     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_52
+   107: 0000465e     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_42
+   108: 000046ac     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_50
+   109: 000046e2     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_57
+   110: 00004738     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_39
+   111: 00004778     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_61
+   112: 00004860     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_47
+   113: 00004884     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_46
+   114: 0000495c     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_54
+   115: 00004a3c     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_36
+   116: 00004a80     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_43
+   117: 00004ada     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_56
+   118: 00004bf0     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_68
+   119: 00004c30     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_38
+   120: 00004c80     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_62
+   121: 00004ce4     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_58
+   122: 00004d08     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_64
+   123: 00004d5a     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_69
+   124: 00004de6     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_53
+   125: 000052c2     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_51
+   126: 00005b0a     0 NOTYPE  LOCAL  DEFAULT    6 sub_5_49
+   127: 00006b44     0 NOTYPE  LOCAL  DEFAULT    6 sub_2_37
+   128: 00006bba     0 NOTYPE  LOCAL  DEFAULT    6 sub_2_34
+   129: 00006cdc     0 NOTYPE  LOCAL  DEFAULT    6 sub_2_20
+   130: 00006db2     0 NOTYPE  LOCAL  DEFAULT    6 sub_2_29
+   131: 00006e1e     0 NOTYPE  LOCAL  DEFAULT    6 sub_2_21
+   132: 00006e44     0 NOTYPE  LOCAL  DEFAULT    6 sub_2_30
+   133: 00006e6c     0 NOTYPE  LOCAL  DEFAULT    6 sub_2_19
+   134: 00006f5e     0 NOTYPE  LOCAL  DEFAULT    6 sub_2_24
+   135: 000070ca     0 NOTYPE  LOCAL  DEFAULT    6 sub_2_28
+   136: 00007124     0 NOTYPE  LOCAL  DEFAULT    6 sub_2_26
+   137: 000071e0     0 NOTYPE  LOCAL  DEFAULT    6 sub_2_36
+   138: 00007230     0 NOTYPE  LOCAL  DEFAULT    6 sub_2_27
+   139: 000072b0     0 NOTYPE  LOCAL  DEFAULT    6 sub_2_33
+   140: 000072e2     0 NOTYPE  LOCAL  DEFAULT    6 sub_2_22
+   141: 0000730e     0 NOTYPE  LOCAL  DEFAULT    6 sub_2_31
+   142: 00007478     0 NOTYPE  LOCAL  DEFAULT    6 sub_2_25
+   143: 000074aa     0 NOTYPE  LOCAL  DEFAULT    6 sub_2_23
+   144: 000074d4     0 NOTYPE  LOCAL  DEFAULT    6 sub_2_35
+   145: 00007d7a     0 NOTYPE  LOCAL  DEFAULT    6 sub_2_j4
+   146: 00007dee     0 NOTYPE  LOCAL  DEFAULT    6 sub_2_32
+   147: 00008208     0 NOTYPE  LOCAL  DEFAULT    6 sub_2_j5
+   148: 0000842a     0 NOTYPE  LOCAL  DEFAULT    6 write_tohost
+   149: 00008432     0 NOTYPE  LOCAL  DEFAULT    6 _exit
+   150: 1a110800     0 NOTYPE  LOCAL  DEFAULT    1 debug_rom
+   151: 1a110800     0 NOTYPE  LOCAL  DEFAULT    1 $x
+   152: 1a111000     0 NOTYPE  LOCAL  DEFAULT    2 debug_exception
+   153: 1a111000     0 NOTYPE  LOCAL  DEFAULT    2 $x
+   154: 00000000     0 NOTYPE  LOCAL  DEFAULT   14 instr_end
+   155: 00009808     0 NOTYPE  LOCAL  DEFAULT    8 region_0
+   156: 0000a808     0 NOTYPE  LOCAL  DEFAULT    9 region_1
+   157: 0001a808     0 NOTYPE  LOCAL  DEFAULT   10 user_stack_start
+   158: 00024448     0 NOTYPE  LOCAL  DEFAULT   10 debugger_stack_start
+   159: 0002e084     0 NOTYPE  LOCAL  DEFAULT   10 debugger_stack_end
+   160: 0002e088     0 NOTYPE  LOCAL  DEFAULT   10 kernel_instr_start
+   161: 00008434     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_1
+   162: 000095dc     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_handler
+   163: 0000849a     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_2
+   164: 00008500     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_3
+   165: 00008566     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_4
+   166: 000085cc     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_5
+   167: 00008632     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_6
+   168: 00008698     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_7
+   169: 000086fe     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_8
+   170: 00008764     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_9
+   171: 000087ca     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_10
+   172: 00008830     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_11
+   173: 00008896     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_12
+   174: 000088fc     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_13
+   175: 00008962     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_14
+   176: 000089c8     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_15
+   177: 00008a2e     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_16
+   178: 00008a94     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_17
+   179: 00008afa     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_18
+   180: 00008b60     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_19
+   181: 00008bc6     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_20
+   182: 00008c2c     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_21
+   183: 00008c92     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_22
+   184: 00008cf8     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_23
+   185: 00008d5e     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_24
+   186: 00008dc4     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_25
+   187: 00008e2a     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_26
+   188: 00008e8e     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_27
+   189: 00008ef2     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_28
+   190: 00008f56     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_29
+   191: 00008fba     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_30
+   192: 0000901e     0 NOTYPE  LOCAL  DEFAULT    6 mmode_intr_vector_31
+   193: 00000000     0 NOTYPE  LOCAL  DEFAULT    4 $x
+   194: 00009100     0 NOTYPE  LOCAL  DEFAULT    6 mmode_exception_[...]
+   195: 00009670     0 NOTYPE  LOCAL  DEFAULT    6 nmi_handler
+   196: 00009480     0 NOTYPE  LOCAL  DEFAULT    6 ebreak_handler
+   197: 000091f8     0 NOTYPE  LOCAL  DEFAULT    6 ecall_handler
+   198: 00009290     0 NOTYPE  LOCAL  DEFAULT    6 instr_fault_handler
+   199: 00009350     0 NOTYPE  LOCAL  DEFAULT    6 load_fault_handler
+   200: 000093e8     0 NOTYPE  LOCAL  DEFAULT    6 store_fault_handler
+   201: 000095d8     0 NOTYPE  LOCAL  DEFAULT    6 pt_fault_handler
+   202: 00009518     0 NOTYPE  LOCAL  DEFAULT    6 illegal_instr_handler
+   203: 000092b4     0 NOTYPE  LOCAL  DEFAULT    6 non_pma_handler_[...]
+   204: 000092c0     0 NOTYPE  LOCAL  DEFAULT    6 pop_gpr_instr_fa[...]
+   205: 0000953c     0 NOTYPE  LOCAL  DEFAULT    6 non_pma_handler_[...]
+   206: 00009548     0 NOTYPE  LOCAL  DEFAULT    6 pop_gpr_illegal_[...]
+   207: 0000968c     0 NOTYPE  LOCAL  DEFAULT    6 kernel_instr_end
+   208: 0002e088     0 NOTYPE  LOCAL  DEFAULT   11 kernel_stack_start
+   209: 00031708     0 NOTYPE  GLOBAL DEFAULT  ABS __global_pointer$
+   210: 00000000     0 NOTYPE  GLOBAL DEFAULT  ABS __vector_start
+   211: 00000000     0 NOTYPE  GLOBAL DEFAULT  ABS __jvt_base$
+   212: 00000080     0 NOTYPE  GLOBAL DEFAULT  ABS __boot_address
+   213: 00031f08     0 NOTYPE  GLOBAL DEFAULT   11 __SDATA_BEGIN__
+   214: 00031f08     0 NOTYPE  GLOBAL DEFAULT   11 __bss_end
+   215: 00000080     0 FUNC    GLOBAL DEFAULT    5 _start
+   216: 00000100     0 NOTYPE  GLOBAL DEFAULT    6 _start_main
+   217: 00009780     0 NOTYPE  GLOBAL DEFAULT    7 test_results
+   218: 1a111000     0 NOTYPE  GLOBAL DEFAULT  ABS debug_exception
+   219: 00031f08     0 NOTYPE  GLOBAL DEFAULT   11 __bss_start
+   220: 00400000     0 NOTYPE  GLOBAL DEFAULT   12 __heap_end
+   221: 00000000     0 FUNC    GLOBAL DEFAULT    4 mtvec_handler
+   222: 1a110800     0 NOTYPE  GLOBAL DEFAULT  ABS debug_rom
+   223: 00031f10     0 NOTYPE  GLOBAL DEFAULT   12 __heap_start
+   224: 00009780     0 NOTYPE  GLOBAL DEFAULT    7 __DATA_BEGIN__
+   225: 00031f08     0 NOTYPE  GLOBAL DEFAULT   11 _edata
+   226: 00031f08     0 NOTYPE  GLOBAL DEFAULT   11 _end
+   227: 00009800     0 NOTYPE  GLOBAL DEFAULT    7 fromhost
+   228: 000097c0     0 NOTYPE  GLOBAL DEFAULT    7 tohost
+
+No version information found in this file.
+Attribute Section: riscv
+File Attributes
+  Tag_RISCV_arch: "rv32i2p1_m2p0_zicsr1p0_zifencei1p0_zca1p0_zcb1p0_zcmp1p0_zba1p0_zbb1p0_zbc1p0_zbs1p0"
+  Tag_RISCV_priv_spec: 1
+  Tag_RISCV_priv_spec_minor: 11

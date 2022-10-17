@@ -1,0 +1,5 @@
+MEMORY
+{
+   ram (rwxai) : ORIGIN = 0x00000000, LENGTH = 0x400000
+   dbg (rwxai) : ORIGIN = 0x1a110800, LENGTH = 0x1000
+}
