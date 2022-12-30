@@ -1,23 +1,27 @@
 CV_SW_TOOLCHAIN  ?= /opt/riscv
 RISCV            ?= $(CV_SW_TOOLCHAIN)
-RISCV_EXE_PREFIX ?= $(RISCV)/bin/riscv32-unknown-elf-
+RISCV_EXE_PREFIX ?= $(RISCV)/bin/riscv32-corev-elf-
 RISCV_CC         ?= gcc
 RISCV_GCC = $(RISCV_EXE_PREFIX)$(RISCV_CC)
 RISCV_AR = $(RISCV_EXE_PREFIX)ar
-RISCV_MARCH ?= rv32imc_zba1p00_zbb1p00_zbc1p00_zbs1p00
+RISCV_MARCH ?= rv32im_zba1p00_zbb1p00_zbc1p00_zbs1p00_zca_zcb_zcmp_zcmt_zicsr_zifencei
 BSP = ./bsp
 
-CFLAGS ?= -Os -g -static -mabi=ilp32 -march=$(RISCV_MARCH) -Wall -pedantic $(RISCV_CFLAGS)
-TEST_FILES = $(filter %.c %.S,$(wildcard  *.S))
+CFLAGS ?= -Os -g -static -mabi=ilp32 -march=$(RISCV_MARCH) -Wall -pedantic $(ZCMT_FLAGS) $(RISCV_CFLAGS)
 
-LD_FILE = link.ld
+ZCMT_FLAGS = -nostartfiles -fno-pie
+
+TEST_FILES = $(filter %.c %.S,$(wildcard  *.c))
+
+LD_FILE = -T link.ld
 
 LD_LIBRARY 	= -L ./bsp
 LD_LIBRARY  += -L ./
 
-all: bsp test.elf test.hex
+all: bsp hello-world.hex hello-world.elf
+#test.elf test.hex
 
-.PHONY: bsp
+.PHONY: bsp %.hex
 
 bsp:
 	make all -C $(BSP)
@@ -37,7 +41,7 @@ bsp:
 		-o $@ \
 		-nostartfiles \
 		$(TEST_FILES) \
-		-T $(LD_FILE) \
+		$(LD_FILE) \
 		$(LD_LIBRARY) \
 		-lcv-verif
 
