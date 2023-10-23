@@ -4,7 +4,7 @@ RISCV_EXE_PREFIX ?= $(RISCV)/bin/riscv32-corev-elf-
 RISCV_CC         ?= gcc
 RISCV_GCC = $(RISCV_EXE_PREFIX)$(RISCV_CC)
 RISCV_AR = $(RISCV_EXE_PREFIX)ar
-RISCV_MARCH ?= rv32im_zba1p00_zbb1p00_zbc1p00_zbs1p00_zca_zcb_zcmp_zcmt_zicsr_zifencei
+RISCV_MARCH ?= rv32ima_zba1p00_zbb1p00_zbc1p00_zbs1p00_zca_zcb_zcmp_zicsr_zifencei
 BSP = ./bsp
 
 CFLAGS ?= -Os -g -static -mabi=ilp32 -march=$(RISCV_MARCH) -Wall -pedantic $(ZCMT_FLAGS) $(RISCV_CFLAGS)
@@ -18,7 +18,7 @@ LD_FILE = -T link.ld
 LD_LIBRARY 	= -L ./bsp
 LD_LIBRARY  += -L ./
 
-all: bsp hello-world.hex hello-world.elf
+all: bsp zalrsc.hex zalrsc.elf
 #test.elf test.hex
 
 .PHONY: bsp %.hex
